@@ -12,4 +12,20 @@ const getTodos = async () => {
   }
 }
 
-export { getTodos }
+const addTodoItem = async (todoItem: Todo) => {
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(todoItem)
+    })
+    const newTodo = await res.json()
+    return newTodo
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { getTodos, addTodoItem }

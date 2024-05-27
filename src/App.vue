@@ -10,10 +10,7 @@ button {
 }
 </style>
 
-<script setup lang="ts">
-import { computed, ref, reactive, watch } from 'vue'
-import Todo from './todo/todo.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="ctr">
