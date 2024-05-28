@@ -43,7 +43,6 @@ const handleSubmitTodo = async (title: string) => {
 
 const handleUpdateTodoItem = async (todo: Todo) => {
   try {
-    console.log(todo)
     await updateTodoItem(todo)
     todos.value = todos.value.map((t) => (t.id == todo.id ? todo : t))
   } catch (error) {

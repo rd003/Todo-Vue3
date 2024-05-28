@@ -8,7 +8,7 @@ const emit = defineEmits<{
 }>()
 
 function onUpdateTodo(todo: Todo) {
-  emit('updateTodoItem', todo)
+  emit('updateTodoItem', { ...todo, completed: !todo.completed })
 }
 
 function onDeleteTodo(id: number) {
@@ -27,12 +27,12 @@ function onDeleteTodo(id: number) {
 
 <style scoped>
 li {
-  font-size: 16px;
+  font-size: 18px;
   list-style: none;
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 5px 0px;
+  padding: 7px 0px;
 }
 
 .checked {

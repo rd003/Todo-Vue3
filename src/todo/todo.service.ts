@@ -37,6 +37,7 @@ const updateTodoItem = async (todo: Todo) => {
       },
       body: JSON.stringify(todo)
     })
+    console.log(res.status)
   } catch (error) {
     console.log(error)
   }
