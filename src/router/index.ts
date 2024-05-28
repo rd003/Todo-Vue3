@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Todo from '../todo/todo.vue'
+import TodoItems from '../todo/todo-items.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'todo',
-      component: Todo
+      component: TodoItems
     }
     // {
     //   path: '/about',

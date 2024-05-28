@@ -30,14 +30,13 @@ const addTodoItem = async (todoItem: Todo) => {
 
 const updateTodoItem = async (todo: Todo) => {
   try {
-    const res = await fetch(`${url}/${todo.id}`, {
+    await fetch(`${url}/${todo.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(todo)
     })
-    console.log(res.status)
   } catch (error) {
     console.log(error)
   }
@@ -45,7 +44,7 @@ const updateTodoItem = async (todo: Todo) => {
 
 const deleteTodoItem = async (id: number) => {
   try {
-    const res = await fetch(`${url}/${id}`, {
+    await fetch(`${url}/${id}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' }
     })
