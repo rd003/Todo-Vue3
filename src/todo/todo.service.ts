@@ -28,4 +28,29 @@ const addTodoItem = async (todoItem: Todo) => {
   }
 }
 
-export { getTodos, addTodoItem }
+const updateTodoItem = async (todo: Todo) => {
+  try {
+    const res = await fetch(`${url}/${todo.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(todo)
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const deleteTodoItem = async (id: number) => {
+  try {
+    const res = await fetch(`${url}/${id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' }
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { getTodos, addTodoItem, updateTodoItem, deleteTodoItem }
