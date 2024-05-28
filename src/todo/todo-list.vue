@@ -19,8 +19,30 @@ function onDeleteTodo(id: number) {
   <ul>
     <li v-for="todoItem in props.todos" :key="todoItem.id">
       <input type="checkbox" :checked="todoItem.completed" @click="onUpdateTodo(todoItem)" />
-      {{ todoItem.title }}
+      <span :class="{ checked: todoItem.completed }">{{ todoItem.title }}</span>
       <button type="button" @click="onDeleteTodo(todoItem.id)">X</button>
     </li>
   </ul>
 </template>
+
+<style scoped>
+li {
+  font-size: 16px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 0px;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+button {
+  padding: 3px 5px;
+  border: none;
+  background-color: rgb(218, 10, 10);
+  color: white;
+}
+</style>

@@ -64,7 +64,7 @@ const handleDeleteTodoItem = async (id: number) => {
 </script>
 
 <template>
-  <h1 style="text-align: center">Todos</h1>
+  <h1 style="text-align: center">Todos ✅</h1>
   <TodoForm @submit-todo="handleSubmitTodo" />
 
   <TodoList
